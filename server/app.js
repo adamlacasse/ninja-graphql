@@ -5,6 +5,10 @@ const mongoose = require('mongoose');
 
 const app = express();
 
+mongoose.set('useNewUrlParser', true);
+mongoose.set('useFindAndModify', false);
+mongoose.set('useCreateIndex', true);
+mongoose.set('useUnifiedTopology', true);
 mongoose.connect('mongodb://adam:test123@ds359847.mlab.com:59847/gql-ninja');
 mongoose.connection.once('open', () => {
     console.log("connected to database")
